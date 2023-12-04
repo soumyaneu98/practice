@@ -70,11 +70,16 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
         tblSolutionCatalog = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         btnUpdateSolnB = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
 
-        jLabel1.setText("MANAGE SOLUTION CATALOG");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manage Solution Catalog");
 
+        tblMarketChannel.setBackground(new java.awt.Color(0, 0, 0));
+        tblMarketChannel.setForeground(new java.awt.Color(255, 255, 255));
         tblMarketChannel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -100,6 +105,8 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
             tblMarketChannel.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        tblProducts.setBackground(new java.awt.Color(0, 0, 0));
+        tblProducts.setForeground(new java.awt.Color(255, 255, 255));
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -128,23 +135,32 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
             tblProducts.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("Suppliers");
 
+        SuppliersmscComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SuppliersmscComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SuppliersmscComboBoxActionPerformed(evt);
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel8.setText("Product");
 
+        btnCreateSolutionBundle.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreateSolutionBundle.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        btnCreateSolutionBundle.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateSolutionBundle.setText("Create Solution Bundle");
+        btnCreateSolutionBundle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCreateSolutionBundle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateSolutionBundleActionPerformed(evt);
             }
         });
 
+        tblSolutionCatalog.setBackground(new java.awt.Color(0, 0, 0));
+        tblSolutionCatalog.setForeground(new java.awt.Color(255, 255, 255));
         tblSolutionCatalog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -173,12 +189,28 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
             tblSolutionCatalog.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel3.setText("Update Market-Channel Combo Bundles");
+        jLabel3.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jLabel3.setText("Updated Market-Channel Combo Bundles");
 
+        btnUpdateSolnB.setBackground(new java.awt.Color(0, 0, 0));
+        btnUpdateSolnB.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        btnUpdateSolnB.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateSolnB.setText("Update Solution Bundle");
+        btnUpdateSolnB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUpdateSolnB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateSolnBActionPerformed(evt);
+            }
+        });
+
+        Back.setBackground(new java.awt.Color(0, 0, 0));
+        Back.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setText("<< Back");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
             }
         });
 
@@ -186,64 +218,58 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(228, 228, 228)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(263, 263, 263)
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
                                 .addComponent(SuppliersmscComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
+                                .addComponent(btnCreateSolutionBundle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnUpdateSolnB))
-                            .addComponent(jLabel3)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addComponent(btnCreateSolutionBundle)))
-                .addContainerGap(425, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(SuppliersmscComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SuppliersmscComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCreateSolutionBundle)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(btnUpdateSolnB)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(btnCreateSolutionBundle)
+                    .addComponent(btnUpdateSolnB))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Back)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -369,11 +395,11 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
                     checkList.add(p.getName());
                 }
                 
-                System.out.println("checkList ---" + checkList);
-                System.out.println("comparison ans --"+ checkList.equals(productNames));
+//                System.out.println("checkList ---" + checkList);
+//                System.out.println("comparison ans --"+ checkList.equals(productNames));
                 
                 if(checkList.equals(productNames)){
-                    System.out.println("went inside as same --"+ checkList + products);
+//                    System.out.println("went inside as same --"+ checkList + products);
                     SolutionOffer soFound = business.getSolutionOfferCatalog().findSingleSolutionOffer(mc, tp);
                     if(soFound.getProducts().contains(product)){
                         JOptionPane.showMessageDialog(null, "Product exists in solution offer!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -394,6 +420,12 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Updated solution offer and bundle prices successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
    
     }//GEN-LAST:event_btnUpdateSolnBActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        CardSequencePanel.remove(this);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_BackActionPerformed
      
     private void populateComboTable() {
         
@@ -410,6 +442,7 @@ public class ManageSolutionCatalogJPanel extends javax.swing.JPanel {
         } 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JComboBox<String> SuppliersmscComboBox;
     private javax.swing.JButton btnCreateSolutionBundle;
     private javax.swing.JButton btnUpdateSolnB;

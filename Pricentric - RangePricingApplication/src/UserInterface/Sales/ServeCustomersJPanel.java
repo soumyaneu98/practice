@@ -65,9 +65,13 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         tblFinalOrder = new javax.swing.JTable();
         btnConfirm = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
 
+        tblOrder.setBackground(new java.awt.Color(0, 0, 0));
+        tblOrder.setForeground(new java.awt.Color(255, 255, 255));
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -98,21 +102,31 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
             tblOrder.getColumnModel().getColumn(0).setResizable(false);
             tblOrder.getColumnModel().getColumn(0).setPreferredWidth(250);
             tblOrder.getColumnModel().getColumn(1).setResizable(false);
+            tblOrder.getColumnModel().getColumn(1).setPreferredWidth(150);
             tblOrder.getColumnModel().getColumn(2).setResizable(false);
+            tblOrder.getColumnModel().getColumn(2).setPreferredWidth(100);
             tblOrder.getColumnModel().getColumn(3).setResizable(false);
+            tblOrder.getColumnModel().getColumn(3).setPreferredWidth(200);
             tblOrder.getColumnModel().getColumn(4).setResizable(false);
+            tblOrder.getColumnModel().getColumn(4).setPreferredWidth(200);
             tblOrder.getColumnModel().getColumn(5).setResizable(false);
+            tblOrder.getColumnModel().getColumn(5).setPreferredWidth(200);
             tblOrder.getColumnModel().getColumn(6).setResizable(false);
+            tblOrder.getColumnModel().getColumn(6).setPreferredWidth(150);
         }
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Select Customer Name");
 
+        CustComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CustComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CustComboBoxActionPerformed(evt);
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setText("Actual Price:");
 
         txtAP.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +135,8 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
             }
         });
 
+        tblFinalOrder.setBackground(new java.awt.Color(0, 0, 0));
+        tblFinalOrder.setForeground(new java.awt.Color(255, 255, 255));
         tblFinalOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -151,6 +167,9 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
             tblFinalOrder.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        btnConfirm.setBackground(new java.awt.Color(0, 0, 0));
+        btnConfirm.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm Deal");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,54 +177,75 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("Placed orders:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Manage Customer Orders");
+
+        Back.setBackground(new java.awt.Color(0, 0, 0));
+        Back.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setText("<< Back");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(246, 246, 246)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
                         .addComponent(jLabel1)
                         .addGap(49, 49, 49)
                         .addComponent(CustComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
                         .addComponent(jLabel5)
-                        .addGap(40, 40, 40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtAP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(32, 32, 32)
                         .addComponent(btnConfirm))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
-                                .addComponent(jScrollPane3)))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Back)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(CustComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConfirm))
-                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(CustComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnConfirm))
+                        .addGap(28, 28, 28)))
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Back)
+                .addGap(12, 12, 12))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -224,12 +264,11 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         }
                 
         String selectedCustomer=(String) CustComboBox.getSelectedItem();
-        System.out.println("Customername--"+selectedCustomer);
         CustomerProfile customer=business.getCustomerDirectory().findCustomer(selectedCustomer);
+        System.out.println("cust ---" + customer.getCustomerId());
         ArrayList<SolutionOrder>  solutions=business.getMasterSolutionOrderList().getSolutionorderlist();
         
         ArrayList<Product> selectedProducts = (ArrayList<Product>) tblOrder.getValueAt(selectedRow, 0);
-        System.out.println("pro --"+selectedProducts);
         
         Market market = (Market) tblOrder.getValueAt(selectedRow, 1);
         Channel channel = (Channel) tblOrder.getValueAt(selectedRow, 2);
@@ -254,7 +293,7 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         System.out.println("sol order --"+foundSolutionOrder.getCustomer().getCustomerId());
         System.out.println("sol order --"+foundSolutionOrder.getSelectedsolutionoffer().getProducts());
 
-        System.out.println(foundSolutionOrder.getQuantity());
+        System.out.println("quant --"+foundSolutionOrder.getQuantity());
 
         int actualPrice = Integer.parseInt(txtAP.getText());
         if(actualPrice < solOffer.getFp() || actualPrice > solOffer.getCp()){
@@ -272,6 +311,7 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         for (SolutionOrder selectedOrder : selectedSolutionOrders) {
             Object[] row = new Object[6];
             row[0] = selectedOrder.getCustomer().getCustomerId();
+//            row[0] = selectedOrder.getCustomer().getCustomerId().equals(customer.getCustomerId()) ? selectedOrder.getCustomer().getCustomerId() : customer.getCustomerId() ;
             row[1] = selectedOrder.getSelectedsolutionoffer().getProducts();
             row[2] = selectedOrder.getQuantity();
             row[3] = selectedOrder.getSelectedsolutionoffer().getTp();
@@ -294,12 +334,12 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         }
         
         String selectedCustomer=(String) CustComboBox.getSelectedItem();
-        System.out.println("Customername--"+selectedCustomer);
+//        System.out.println("Customername--"+selectedCustomer);
         CustomerProfile customer=business.getCustomerDirectory().findCustomer(selectedCustomer);
         ArrayList<SolutionOrder>  solutions=business.getMasterSolutionOrderList().getSolutionorderlist();
         
         ArrayList<Product> selectedProducts = (ArrayList<Product>) tblOrder.getValueAt(selectedRow, 0);
-        System.out.println("pro --"+selectedProducts);
+//        System.out.println("pro --"+selectedProducts);
         
         Market market = (Market) tblOrder.getValueAt(selectedRow, 1);
         Channel channel = (Channel) tblOrder.getValueAt(selectedRow, 2);
@@ -321,12 +361,18 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
         
         SolutionOrder foundSolutionOrder = business.getMasterSolutionOrderList().findSolutionOrderBySolutionOffer(solOffer);
 
-        System.out.println("sol order in order mouse pressed--"+foundSolutionOrder);
+//        System.out.println("sol order in order mouse pressed--"+foundSolutionOrder);
     }//GEN-LAST:event_tblOrderMousePressed
 
     private void txtAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAPActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        CardSequencePanel.remove(this);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_BackActionPerformed
     
     private void populateCombo() {
         CustComboBox.removeAllItems();
@@ -338,11 +384,11 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
     
     private void populateOrderTable() {
         String selectedCustomer=(String) CustComboBox.getSelectedItem();
-        System.out.println("Customername--"+selectedCustomer);
+//        System.out.println("Customername--"+selectedCustomer);
         CustomerProfile customer=business.getCustomerDirectory().findCustomer(selectedCustomer);
         ArrayList<SolutionOrder>  solutions=business.getMasterSolutionOrderList().getSolutionorderlist();
-        System.out.println(solutions);
-                System.out.println(salesperson);
+//        System.out.println(solutions);
+//                System.out.println(salesperson);
 
 //        for(SolutionOrder so: solutions){
 //            System.out.println(so.getCustomer().getCustomerId() + "====" + so.getSalesperson().getPerson().getPersonId());
@@ -374,10 +420,12 @@ public class ServeCustomersJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JComboBox<String> CustComboBox;
     private javax.swing.JButton btnConfirm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

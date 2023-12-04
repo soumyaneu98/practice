@@ -120,25 +120,14 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
 
         SuppliersComboBox = new javax.swing.JComboBox<>();
         Back = new javax.swing.JButton();
-        Next = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         SupplierCatalogTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        productNameTextField = new javax.swing.JTextField();
-        productFrequencyAboveTargetTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        productRevenueTextField = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        productFrequencyBelowTargetTextField = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        productPricePerformanceTextField = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SuppliersComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -146,27 +135,26 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
                 SuppliersComboBoxActionPerformed(evt);
             }
         });
-        add(SuppliersComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, -1));
+        add(SuppliersComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 180, -1));
 
+        Back.setBackground(new java.awt.Color(0, 0, 0));
+        Back.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setText("<< Back");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
-        Next.setText("Next >>");
-        Next.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NextActionPerformed(evt);
-            }
-        });
-        add(Next, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 80, -1));
-
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setText("Suppliers");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 60, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 60, -1));
 
+        SupplierCatalogTable.setBackground(new java.awt.Color(0, 0, 0));
+        SupplierCatalogTable.setForeground(new java.awt.Color(255, 255, 255));
         SupplierCatalogTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -198,52 +186,16 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
 
         jScrollPane2.setViewportView(jScrollPane1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 123, 580, 100));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 183, 690, 170));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Manage Suppliers");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 550, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 870, -1));
 
-        jLabel3.setText("Product name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 110, -1));
-
-        productNameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productNameTextFieldActionPerformed(evt);
-            }
-        });
-        add(productNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 150, -1));
-        add(productFrequencyAboveTargetTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 150, -1));
-
-        jLabel4.setText("Frequency Above Target");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 150, -1));
-
-        productRevenueTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productRevenueTextFieldActionPerformed(evt);
-            }
-        });
-        add(productRevenueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 150, -1));
-
-        jLabel5.setText("Sales Revenues");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 110, -1));
-        add(productFrequencyBelowTargetTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 150, -1));
-
-        jLabel6.setText("Frequency Below Target");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 150, -1));
-
-        productPricePerformanceTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productPricePerformanceTextFieldActionPerformed(evt);
-            }
-        });
-        add(productPricePerformanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 150, -1));
-
-        jLabel7.setText("Marign around target");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 150, -1));
-
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel8.setText("Product");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -252,15 +204,6 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 
     }//GEN-LAST:event_BackActionPerformed
-
-    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-        // TODO add your handling code here:
-        
-        ManageProductPerformanceDetail mppd = new ManageProductPerformanceDetail(selectedproduct, CardSequencePanel);
-        CardSequencePanel.add(mppd);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-
-    }//GEN-LAST:event_NextActionPerformed
 
     private void SuppliersComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuppliersComboBoxActionPerformed
         // TODO add your handling code here:
@@ -285,27 +228,10 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
             return;
         }
         
-        ProductSummary productsummary = new ProductSummary(selectedproduct);
+       
 
-        productNameTextField.setText(selectedproduct.toString());
-        String revenues = String.valueOf(productsummary.getSalesRevenues());
-        productRevenueTextField.setText(revenues);
-        productFrequencyAboveTargetTextField.setText( String.valueOf(productsummary.getNumberAboveTarget()));
-        productFrequencyBelowTargetTextField.setText( String.valueOf(productsummary.getNumberBelowTarget()));
-        productPricePerformanceTextField.setText(String.valueOf(productsummary.getProductPricePerformance()));
+        
     }//GEN-LAST:event_SupplierCatalogTableMousePressed
-
-    private void productNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_productNameTextFieldActionPerformed
-
-    private void productRevenueTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productRevenueTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_productRevenueTextFieldActionPerformed
-
-    private void productPricePerformanceTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productPricePerformanceTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_productPricePerformanceTextFieldActionPerformed
 
     private void SupplierCatalogTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SupplierCatalogTableMouseEntered
         // TODO add your handling code here:
@@ -314,24 +240,13 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
-    private javax.swing.JButton Next;
     private javax.swing.JTable SupplierCatalogTable;
     private javax.swing.JComboBox<String> SuppliersComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField productFrequencyAboveTargetTextField;
-    private javax.swing.JTextField productFrequencyBelowTargetTextField;
-    private javax.swing.JTextField productNameTextField;
-    private javax.swing.JTextField productPricePerformanceTextField;
-    private javax.swing.JTextField productRevenueTextField;
     // End of variables declaration//GEN-END:variables
 
 }

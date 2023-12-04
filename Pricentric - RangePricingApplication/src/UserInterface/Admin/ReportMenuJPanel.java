@@ -41,13 +41,16 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
         btnRep3 = new javax.swing.JButton();
         btnRep2 = new javax.swing.JButton();
         btnRep4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
 
-        btnRep1.setBackground(new java.awt.Color(102, 153, 255));
+        btnRep1.setBackground(new java.awt.Color(0, 0, 0));
+        btnRep1.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnRep1.setForeground(new java.awt.Color(255, 255, 255));
         btnRep1.setText("Top 3 best negotiated solutions by market");
         btnRep1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRep1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRep1.setMaximumSize(new java.awt.Dimension(200, 40));
         btnRep1.setMinimumSize(new java.awt.Dimension(20, 23));
         btnRep1.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -57,10 +60,12 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRep5.setBackground(new java.awt.Color(102, 153, 255));
+        btnRep5.setBackground(new java.awt.Color(0, 0, 0));
+        btnRep5.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnRep5.setForeground(new java.awt.Color(255, 255, 255));
         btnRep5.setText("Analysis of pricing strategy");
         btnRep5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRep5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRep5.setMaximumSize(new java.awt.Dimension(200, 40));
         btnRep5.setMinimumSize(new java.awt.Dimension(20, 23));
         btnRep5.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -70,10 +75,12 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRep3.setBackground(new java.awt.Color(102, 153, 255));
+        btnRep3.setBackground(new java.awt.Color(0, 0, 0));
+        btnRep3.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnRep3.setForeground(new java.awt.Color(255, 255, 255));
         btnRep3.setText("Top 3 best sales persons");
         btnRep3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRep3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRep3.setMaximumSize(new java.awt.Dimension(200, 40));
         btnRep3.setMinimumSize(new java.awt.Dimension(20, 23));
         btnRep3.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -83,10 +90,12 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRep2.setBackground(new java.awt.Color(102, 153, 255));
+        btnRep2.setBackground(new java.awt.Color(0, 0, 0));
+        btnRep2.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnRep2.setForeground(new java.awt.Color(255, 255, 255));
         btnRep2.setText("Top 3 best customers");
         btnRep2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRep2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRep2.setMaximumSize(new java.awt.Dimension(200, 40));
         btnRep2.setMinimumSize(new java.awt.Dimension(20, 23));
         btnRep2.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -96,10 +105,12 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRep4.setBackground(new java.awt.Color(102, 153, 255));
+        btnRep4.setBackground(new java.awt.Color(0, 0, 0));
+        btnRep4.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnRep4.setForeground(new java.awt.Color(255, 255, 255));
         btnRep4.setText("Total marginal revenue by market");
         btnRep4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRep4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRep4.setMaximumSize(new java.awt.Dimension(200, 40));
         btnRep4.setMinimumSize(new java.awt.Dimension(20, 23));
         btnRep4.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -109,42 +120,44 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Performance Reports");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRep2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRep3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(btnRep1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(btnRep4, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(btnRep5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addGap(402, 402, 402)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRep1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRep2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRep3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRep5, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRep4, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(375, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(68, 68, 68)
                 .addComponent(btnRep1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(38, 38, 38)
                 .addComponent(btnRep2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(37, 37, 37)
                 .addComponent(btnRep3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(btnRep4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addComponent(btnRep5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,5 +193,6 @@ public class ReportMenuJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRep3;
     private javax.swing.JButton btnRep4;
     private javax.swing.JButton btnRep5;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

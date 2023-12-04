@@ -28,6 +28,7 @@ public class AnalysisHelper {
     public AnalysisHelper(Business b) {
         business = b;
         System.out.println("Report generation");
+        System.out.println();
 
     }
 
@@ -40,21 +41,17 @@ public class AnalysisHelper {
         for (SolutionOrder solutionOrder : business.getMasterSolutionOrderList().getSolutionorderlist()) {
             MarketChannelAssignment marketChannelCombo = solutionOrder.getMarketChannelCombo();
             Market market = marketChannelCombo.getMarket();
-            System.out.println("market --"+market);
 
             // Check if the solution was negotiated (sold above target)
-            System.out.println("Going to compare --" + solutionOrder.getActualPrice() + " --- "+ solutionOrder.getSelectedsolutionoffer().getTp());
             if (solutionOrder.getActualPrice() > solutionOrder.getSelectedsolutionoffer().getTp()) {
                 // Check if the market is already in the map
                 if (topSolutionsByMarket.containsKey(market)) {
                     // Update the list of top solutions for the market
                     List<SolutionOrder> topSolutions = topSolutionsByMarket.get(market);
-                    System.out.println("topsoln before update-- "+ topSolutions);
                     updateTopSolutionsList(topSolutions, solutionOrder);
                 } else {
                     // If the market is not in the map, create a new list with the current solution
                     List<SolutionOrder> topSolutions = initializeTopSolutionsList(solutionOrder);
-                    System.out.println("topsoln to add-- "+ topSolutions);
                     topSolutionsByMarket.put(market, topSolutions);
                 }
             }
@@ -72,8 +69,6 @@ public class AnalysisHelper {
         Collections.sort(topSolutions, (a, b) -> Integer.compare(b.getActualPrice(), a.getActualPrice()));
 
         // Keep only the top 3 solutions
-        System.out.println("size ts --"+ topSolutions.size());
-                System.out.println("size ts --"+ topSolutions.size());
 
         if (topSolutions.size() > 3) {
             topSolutions.subList(3, topSolutions.size()).clear();

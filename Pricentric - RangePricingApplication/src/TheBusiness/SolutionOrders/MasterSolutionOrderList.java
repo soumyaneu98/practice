@@ -36,7 +36,6 @@ public class MasterSolutionOrderList {
     public SolutionOrder newSolutionOrderwithqty(SolutionOffer soloffer,  MarketChannelAssignment mca, SalesPersonProfile sp, CustomerProfile cp, int qty) {
 
         SolutionOrder so = new SolutionOrder(soloffer, mca, sp, cp, qty);
-        System.out.println("check in mastersolorderlist " + so.getQuantity());
         solutionorderlist.add(so);
         soloffer.addSolutionOrder(so);
         

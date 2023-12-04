@@ -53,7 +53,6 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         Back = new javax.swing.JButton();
-        Next = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -67,32 +66,32 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
         tblCombo = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Back.setBackground(new java.awt.Color(0, 0, 0));
+        Back.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setText("<< Back");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
 
-        Next.setText("Next >>");
-        Next.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NextActionPerformed(evt);
-            }
-        });
-        add(Next, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 80, -1));
-
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Pricentric");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 190, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 80, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Manage The Business");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 20, 550, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 20, 1140, -1));
 
+        tblMarket.setBackground(new java.awt.Color(0, 0, 0));
+        tblMarket.setForeground(new java.awt.Color(255, 255, 255));
         tblMarket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -116,11 +115,15 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblMarket);
         if (tblMarket.getColumnModel().getColumnCount() > 0) {
             tblMarket.getColumnModel().getColumn(0).setResizable(false);
+            tblMarket.getColumnModel().getColumn(0).setPreferredWidth(200);
             tblMarket.getColumnModel().getColumn(1).setResizable(false);
+            tblMarket.getColumnModel().getColumn(1).setPreferredWidth(200);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 270, 160));
 
+        tblChannel.setBackground(new java.awt.Color(0, 0, 0));
+        tblChannel.setForeground(new java.awt.Color(255, 255, 255));
         tblChannel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -148,15 +151,19 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 250, 160));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Market");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 60, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Market Channel Assignment");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 180, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, 240, -1));
 
+        btnMap.setBackground(new java.awt.Color(0, 0, 0));
+        btnMap.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        btnMap.setForeground(new java.awt.Color(255, 255, 255));
         btnMap.setText("Map");
+        btnMap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMapLoginButtonActionPerformed(evt);
@@ -164,6 +171,8 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
         });
         add(btnMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 110, 30));
 
+        tblCombo.setBackground(new java.awt.Color(0, 0, 0));
+        tblCombo.setForeground(new java.awt.Color(255, 255, 255));
         tblCombo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -193,7 +202,7 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, -1, 160));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("Channel");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 60, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -204,15 +213,6 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 
     }//GEN-LAST:event_BackActionPerformed
-
-    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-        // TODO add your handling code here:
-        
-        ManageBusinessDetail1 mppd = new ManageBusinessDetail1(business, CardSequencePanel);
-        CardSequencePanel.add(mppd);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-
-    }//GEN-LAST:event_NextActionPerformed
 
     private void btnMapLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapLoginButtonActionPerformed
         // TODO add your handling code here:
@@ -249,7 +249,6 @@ public class ManageTheBusinessJPanel extends javax.swing.JPanel {
  }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
-    private javax.swing.JButton Next;
     private javax.swing.JButton btnMap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

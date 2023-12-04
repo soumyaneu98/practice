@@ -6,6 +6,7 @@ package UserInterface.Main.WorkSpaceProfiles;
 
 import TheBusiness.Business.Business;
 import TheBusiness.CustomerManagement.CustomerProfile;
+import UserInterface.Customer.OrderHistoryJPanel;
 import UserInterface.Customer.OrderSolutionOfferJPanel;
 import javax.swing.JPanel;
 
@@ -40,18 +41,34 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
         btnOrderSolnOffer = new javax.swing.JButton();
         btnOrderHistory = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
+        setBackground(new java.awt.Color(214, 173, 96));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Customer Dashboard");
 
-        btnOrderSolnOffer.setBackground(new java.awt.Color(102, 153, 255));
+        btnOrderSolnOffer.setBackground(new java.awt.Color(0, 0, 0));
+        btnOrderSolnOffer.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnOrderSolnOffer.setForeground(new java.awt.Color(255, 255, 255));
         btnOrderSolnOffer.setText("Order Solution Offer");
         btnOrderSolnOffer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOrderSolnOffer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrderSolnOffer.setMaximumSize(new java.awt.Dimension(200, 40));
         btnOrderSolnOffer.setMinimumSize(new java.awt.Dimension(20, 23));
         btnOrderSolnOffer.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -61,10 +78,12 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnOrderHistory.setBackground(new java.awt.Color(102, 153, 255));
+        btnOrderHistory.setBackground(new java.awt.Color(0, 0, 0));
+        btnOrderHistory.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         btnOrderHistory.setForeground(new java.awt.Color(255, 255, 255));
         btnOrderHistory.setText("Order History");
         btnOrderHistory.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOrderHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrderHistory.setMaximumSize(new java.awt.Dimension(200, 40));
         btnOrderHistory.setMinimumSize(new java.awt.Dimension(20, 23));
         btnOrderHistory.setPreferredSize(new java.awt.Dimension(240, 30));
@@ -79,27 +98,26 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(178, 178, 178)
-                            .addComponent(btnOrderSolnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
-                        .addComponent(jLabel1)))
+                .addGap(482, 482, 482)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOrderSolnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(254, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
+                .addGap(63, 63, 63)
                 .addComponent(btnOrderSolnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(btnOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(371, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -115,6 +133,12 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnOrderHistoryIdentifyResourceAssetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderHistoryIdentifyResourceAssetsActionPerformed
         // TODO add your handling code here:
+        CardSequencePanel.removeAll();
+
+        OrderHistoryJPanel oh = new OrderHistoryJPanel(business, CardSequencePanel, cp);
+
+        CardSequencePanel.add("OrderHistory", oh);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnOrderHistoryIdentifyResourceAssetsActionPerformed
 
 
@@ -122,5 +146,6 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnOrderHistory;
     private javax.swing.JButton btnOrderSolnOffer;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLayeredPane jLayeredPane1;
     // End of variables declaration//GEN-END:variables
 }

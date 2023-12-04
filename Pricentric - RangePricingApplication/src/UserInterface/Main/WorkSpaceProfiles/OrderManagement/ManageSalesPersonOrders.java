@@ -5,13 +5,11 @@
  */
 package UserInterface.Main.WorkSpaceProfiles.OrderManagement;
 
-import UserInterface.ProductManagement.*;
 import TheBusiness.Business.Business;
 import TheBusiness.ProductManagement.Product;
-import TheBusiness.ProductManagement.ProductCatalog;
-import TheBusiness.ProductManagement.ProductSummary;
+import TheBusiness.SalesManagement.SalesPersonProfile;
+import TheBusiness.SolutionOrders.SolutionOrder;
 import TheBusiness.Supplier.Supplier;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -28,11 +26,14 @@ public class ManageSalesPersonOrders extends javax.swing.JPanel {
     Business business;
     Supplier selectedsupplier;
     Product selectedproduct;
+    SalesPersonProfile spp;
 
-    public ManageSalesPersonOrders(Business bz, JPanel jp) {
+    public ManageSalesPersonOrders(Business bz, JPanel jp,SalesPersonProfile spp) {
         CardSequencePanel = jp;
         this.business = bz;
+        this.spp=spp;
         initComponents();
+        populateSalesOrderHistory();
  
 
     }
@@ -48,68 +49,86 @@ public class ManageSalesPersonOrders extends javax.swing.JPanel {
     private void initComponents() {
 
         Back = new javax.swing.JButton();
-        Next = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        SupplierCatalogTable = new javax.swing.JTable();
+        tblSalesHistory = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(214, 173, 96));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Back.setBackground(new java.awt.Color(0, 0, 0));
+        Back.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setText("<< Back");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
 
-        Next.setText("Next >>");
-        Next.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NextActionPerformed(evt);
-            }
-        });
-        add(Next, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 80, -1));
-
-        SupplierCatalogTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblSalesHistory.setBackground(new java.awt.Color(0, 0, 0));
+        tblSalesHistory.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tblSalesHistory.setForeground(new java.awt.Color(255, 255, 255));
+        tblSalesHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Order id", "Status", "Sales Volume", "Customer"
+                "Customer", "Products", "Sales Volume", "Target Price", "Actual Price", "Bill Amount", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        SupplierCatalogTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblSalesHistory.setGridColor(new java.awt.Color(0, 0, 0));
+        tblSalesHistory.getTableHeader().setReorderingAllowed(false);
+        tblSalesHistory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SupplierCatalogTableMouseEntered(evt);
+                tblSalesHistoryMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                SupplierCatalogTableMousePressed(evt);
+                tblSalesHistoryMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(SupplierCatalogTable);
+        jScrollPane1.setViewportView(tblSalesHistory);
+        if (tblSalesHistory.getColumnModel().getColumnCount() > 0) {
+            tblSalesHistory.getColumnModel().getColumn(0).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(0).setPreferredWidth(100);
+            tblSalesHistory.getColumnModel().getColumn(1).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(1).setPreferredWidth(150);
+            tblSalesHistory.getColumnModel().getColumn(2).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(2).setPreferredWidth(150);
+            tblSalesHistory.getColumnModel().getColumn(3).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(3).setPreferredWidth(150);
+            tblSalesHistory.getColumnModel().getColumn(4).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(4).setPreferredWidth(150);
+            tblSalesHistory.getColumnModel().getColumn(5).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(5).setPreferredWidth(120);
+            tblSalesHistory.getColumnModel().getColumn(6).setResizable(false);
+            tblSalesHistory.getColumnModel().getColumn(6).setPreferredWidth(200);
+        }
 
         jScrollPane2.setViewportView(jScrollPane1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 123, 580, 100));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 580, 180));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel2.setText("Browse Orders");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 550, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Order History");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 900, -1));
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setText("Orders");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -119,29 +138,49 @@ public class ManageSalesPersonOrders extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BackActionPerformed
 
-    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-        // TODO add your handling code here:
-        
- 
-    }//GEN-LAST:event_NextActionPerformed
-
-    private void SupplierCatalogTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SupplierCatalogTableMousePressed
+    private void tblSalesHistoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSalesHistoryMousePressed
         // TODO add your handling code 
-    }//GEN-LAST:event_SupplierCatalogTableMousePressed
+    }//GEN-LAST:event_tblSalesHistoryMousePressed
 
-    private void SupplierCatalogTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SupplierCatalogTableMouseEntered
+    private void tblSalesHistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSalesHistoryMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_SupplierCatalogTableMouseEntered
+    }//GEN-LAST:event_tblSalesHistoryMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
-    private javax.swing.JButton Next;
-    private javax.swing.JTable SupplierCatalogTable;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblSalesHistory;
     // End of variables declaration//GEN-END:variables
+
+    private void populateSalesOrderHistory() {
+        
+         DefaultTableModel dtm=(DefaultTableModel)tblSalesHistory.getModel();
+         dtm.setRowCount(0);
+        
+        for (SolutionOrder so : business.getMasterSolutionOrderList().getSolutionorderlist()) {
+            
+            if(so.getSalesperson().getPerson().getPersonId().equals(spp.getPerson().getPersonId()))
+            {
+                Object[] row = new Object[7];
+                row[0]=so.getCustomer().getCustomerId();
+                row[1] = so.getSelectedsolutionoffer().getProducts();
+                row[2] = so.getQuantity();
+                row[3] = so.getSelectedsolutionoffer().getTp();
+                row[4] = so.getActualPrice();
+                row[5] = so.getActualPrice() * so.getQuantity();
+                row[6]= (so.getActualPrice()==0)? "Review pending" : "Completed Order";
+             
+                dtm.addRow(row);
+
+             
+            }
+            
+        }
+        
+    }
 
 }

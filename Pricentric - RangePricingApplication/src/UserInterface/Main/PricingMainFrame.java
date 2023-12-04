@@ -58,35 +58,61 @@ public class PricingMainFrame extends javax.swing.JFrame {
         PasswordTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         CardSequencePanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        actionsidejpanel.setBackground(new java.awt.Color(0, 153, 153));
+        actionsidejpanel.setBackground(new java.awt.Color(214, 173, 96));
         actionsidejpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginButtonActionPerformed(evt);
             }
         });
-        actionsidejpanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, 30));
+        actionsidejpanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 70, 30));
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setText("User Name");
-        actionsidejpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        actionsidejpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        UserNameTextField.setText("sales");
-        actionsidejpanel.add(UserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, -1));
+        UserNameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        UserNameTextField.setText("admin");
+        UserNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserNameTextFieldActionPerformed(evt);
+            }
+        });
+        actionsidejpanel.add(UserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 110, -1));
 
+        PasswordTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PasswordTextField.setText("XXXX");
-        actionsidejpanel.add(PasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, -1));
+        PasswordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordTextFieldActionPerformed(evt);
+            }
+        });
+        actionsidejpanel.add(PasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 110, -1));
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("Password");
-        actionsidejpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+        actionsidejpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 20));
 
         SplitHomeArea.setLeftComponent(actionsidejpanel);
 
         CardSequencePanel.setLayout(new java.awt.CardLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("PRICENTRIC ");
+        CardSequencePanel.add(jLabel3, "card2");
+
         SplitHomeArea.setRightComponent(CardSequencePanel);
 
         getContentPane().add(SplitHomeArea, java.awt.BorderLayout.CENTER);
@@ -153,6 +179,14 @@ public class PricingMainFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_LoginButtonActionPerformed
 
+    private void UserNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserNameTextFieldActionPerformed
+
+    private void PasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,5 +231,6 @@ public class PricingMainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

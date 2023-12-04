@@ -64,7 +64,6 @@ public class SolutionOrder {
     }
 
     public int getQuantity() {
-        System.out.println("quant here --"+ quantity);
         return this.quantity;
     }
 

@@ -517,6 +517,8 @@ class ConfigureABusiness {
         Product lenovoProd3 = lenovoProductCatalog.getProductList().get(randomIndex3);
         Product lenovoProd4 = lenovoProductCatalog.getProductList().get(randomIndex4);
         
+        System.out.println();
+        
         System.out.println("Random 4 lenovo products -- "+ lenovoProd1 + " -- " +lenovoProd2 + " -- " + lenovoProd3 + " -- " + lenovoProd4);
         
         // EPSON PRODUCTS
